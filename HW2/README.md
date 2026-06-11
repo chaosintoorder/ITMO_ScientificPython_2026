@@ -63,7 +63,7 @@ def uniprot_parse_response(resp):
     except (KeyError, TypeError, ValueError) as err:
         return {"err_msg": f"UniProt parse error: {str(err)}"}
 ```
-## The get_ensembl function
+## The `get_ensembl` function
 
 This method targets specific Ensembl feature endpoints to fetch genomic records in .JSON.
 ```python
