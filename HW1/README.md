@@ -162,7 +162,7 @@ git branch -f main o/main
 ---
 # 2. My progress
 
-![[hw1_results.png|473]]
+![My progress](hw1_results.PNG)
 
 ---
 # 3. Converting a text file back into an image
