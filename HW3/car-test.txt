@@ -1,0 +1,86 @@
+car1 = Car(100, 20) # max_speed = 100, initial speed = 5
+car2 = Car(60, 30) # max_speed = 60, initial speed = 30
+car3 = Car(100, 0) # a car that is off road upon creation
+print(f"Total cars on road: {Car.total_cars()}")
+
+>> Total cars on road: 2
+
+car1.accelerate(100)
+
+>> INFO: Speed increases by 10
+>> INFO: Speed increases by 10
+>> INFO: Speed increases by 10
+>> INFO: Speed increases by 10
+>> INFO: Speed increases by 10
+>> INFO: Speed increases by 10
+>> INFO: Speed increases by 10
+>> INFO: Speed increases by 10
+>> INFO: The speed of this car has been increased from 20 to 100
+
+car2.accelerate(50)
+
+>> INFO: Speed increases by 10
+>> INFO: Speed increases by 10
+>> INFO: The speed of this car has been increased from 30 to 50
+
+print("Speed of car 1:", car1.current_speed)
+
+>> Speed of car 1: 100
+
+print("Speed of car 2:", car2.current_speed)
+
+>> Speed of car 2: 50
+ 
+car1.brake(10)
+
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: The speed of this car has been decreased from 100 to 10
+
+car2.brake(0)
+print("Total cars on road:", Car.total_cars())
+car2.parking()
+print("Total cars on road:", Car.total_cars())
+
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: Speed decreases by 10
+>> INFO: The speed of this car has been decreased from 50 to 0
+>> Total cars on road: 2
+>> INFO: The speed of this car has been decreased from 0 to 0 # parking method ensures the speed is 0 in the end
+>> Parking the car...
+>> Total cars on road: 1
+
+car3.accelerate(80)# car3 is now on the road
+car3.show_weather()
+print("Total cars on road:", Car.total_cars())
+
+>> INFO: The speed of this car has been increased from 0 to 80
+>> Current temperature: -0.0 C
+>> Current apparent_temperature: 14.0 C
+>> Current rain: 250.0 mm
+>> Current wind_speed: 0.0 m/s
+>> Total cars on road: 2
+
+car2.accelerate(10) # # car2 goes from parking on the road
+print("Total cars on road:", Car.total_cars())
+
+>> INFO: Speed increases by 10
+>> INFO: The speed of this car has been increased from 0 to 10
+>> Total cars on road: 3
+
+Car.show_weather()
+
+>> Current temperature: -0.0 C
+>> Current apparent_temperature: 14.0 C
+>> Current rain: 250.0 mm
+>> Current wind_speed: 0.0 m/s
